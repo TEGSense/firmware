@@ -1,6 +1,6 @@
 # TEGSense Firmware
 
-[TEGSense](https://github.com/TEGSense/tegsense-hardware) is a battery-free photoplethysmograph (PPG) device powered by an array of thermoelectric generators (TEGs).
+[TEGSense](https://github.com/TEGSense/hardware) is a battery-free photoplethysmograph (PPG) device powered by an array of thermoelectric generators (TEGs).
 It is based around three primary pieces of hardware:
 
 - [LTC3108](https://www.analog.com/en/products/ltc3108.html) "Ultralow Voltage Step-Up Converter and Power Manager" to use the low voltage output of the TEGs to charge a capacitor array;
@@ -28,7 +28,7 @@ This repository hosts the firmware for that board, and also provides a baseline 
 
 The recommended way to use the software is through the [nRF Connect tools for VS Code](https://www.nordicsemi.com/Products/Development-tools/nRF-Connect-for-VS-Code), but as it's based on Zephyr RTOS there are many ways to go about it.
 Using Visual Studio Code, you can simply add a build configuration with the intended target board and start the build.
-The target board could be the [TEGSense](https://github.com/TEGSense/tegsense-hardware) device, for which a board configuration is included.
+The target board could be the [TEGSense](https://github.com/TEGSense/hardware) device, for which a board configuration is included.
 The u-blox BMD-300 (based on the nRF52832) will also work.
 Other boards, like the nRF52-DK will work as well, but they may not have the built-in support for the on-board DC-DC converter, so you will either have to add the necessary external LC filter or fall back on the LDO operation.
 
