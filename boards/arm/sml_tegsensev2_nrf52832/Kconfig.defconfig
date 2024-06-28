@@ -1,0 +1,9 @@
+if BOARD_SML_TEGSENSEV2_NRF52832
+
+config BOARD
+	default "sml_tegsensev2_nrf52832"
+
+config BT_CTLR
+   default BT
+
+endif

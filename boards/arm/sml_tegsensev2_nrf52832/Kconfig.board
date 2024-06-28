@@ -1,0 +1,9 @@
+config BOARD_SML_TEGSENSEV2_NRF52832
+	bool "SML TEGSense-v2"
+	depends on SOC_NRF52832_QFAA
+
+config BOARD_ENABLE_DCDC
+	bool "DCDC mode"
+	select SOC_DCDC_NRF52X
+	default y
+	depends on BOARD_SML_TEGSENSEV2_NRF52832

@@ -1,0 +1,7 @@
+mainmenu "TEGSense v2"
+
+source "Kconfig.zephyr"
+
+config NUS_BUFFERING
+	bool "Buffer outgoing NUS packets to improve throughput."
+	default n

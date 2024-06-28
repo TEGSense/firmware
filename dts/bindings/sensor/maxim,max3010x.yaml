@@ -1,0 +1,5 @@
+description: MAX3010x heart rate sensor
+
+compatible: "maxim,max3010x"
+
+include: i2c-device.yaml

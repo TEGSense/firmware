@@ -1,0 +1,9 @@
+---
+BasedOnStyle: Chromium
+AlignAfterOpenBracket: AlwaysBreak
+AllowAllParametersOfDeclarationOnNextLine: true
+IndentWidth: '4'
+IndentPPDirectives: BeforeHash
+IndentAccessModifiers: true
+
+...

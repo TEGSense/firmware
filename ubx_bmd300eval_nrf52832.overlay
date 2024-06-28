@@ -1,0 +1,77 @@
+&pinctrl {
+	i2c0_tegsense_default: i2c0_tegsense_default {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
+				<NRF_PSEL(TWIM_SCL, 0, 3)>;
+		};
+	};
+
+	i2c0_tegsense_sleep: i2c0_tegsense_sleep {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
+				<NRF_PSEL(TWIM_SCL, 0, 3)>;
+			low-power-enable;
+		};
+	};
+};
+
+/ {
+    gpiopins {
+        compatible = "gpio-leds";
+        gpio_en_3v3: gpiopin_0 {
+            gpios = <&gpio0 29 (GPIO_OPEN_SOURCE | GPIO_ACTIVE_HIGH)>;
+        };
+    };
+};
+
+&adc {
+    status = "disabled";
+};
+
+&gpiote {
+    status = "disabled";
+};
+
+&gpio0 {
+    status = "okay";
+};
+
+arduino_serial: &uart0 {
+    status = "disabled";
+};
+
+&i2c1 {
+    status = "disabled";
+};
+
+&pwm0 {
+    status = "disabled";
+};
+
+&spi0 {
+    status = "disabled";
+};
+
+&spi1 {
+	status = "disabled";
+};
+
+arduino_spi: &spi2 {
+	status = "disabled";
+};
+
+arduino_i2c: &i2c0 {
+	compatible = "nordic,nrf-twi";
+	status = "okay";
+    clock-frequency = <I2C_BITRATE_STANDARD>;
+	pinctrl-0 = <&i2c0_tegsense_default>;
+	pinctrl-1 = <&i2c0_tegsense_sleep>;
+	pinctrl-names = "default", "sleep";
+
+	max3010x@57 {
+		status = "okay";
+        compatible = "maxim,max3010x";
+        reg = <0x57>;
+        label = "MAX3010x";
+	};
+};
